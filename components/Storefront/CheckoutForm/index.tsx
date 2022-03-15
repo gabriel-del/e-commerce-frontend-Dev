@@ -45,7 +45,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({total, handleFormSubmit}) =>
     evt.preventDefault();
 
     let checkout: Checkout = {
-      document,
+      document: document.replace(/\.|\-/g, ''),
       payment_type: paymentType,
       installments: installments || "1",
       items:[]
